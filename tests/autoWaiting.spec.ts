@@ -45,6 +45,6 @@ test('timeouts', async ({page}) => {
     // test.slow()
     const successButton = page.locator('.bg-success')
 
-    await successButton.click({timeout: 15000}) //timeouts with click() will override timeouts defind in playwright.config.ts
+    await successButton.click({timeout: 15000}) //timeouts with click() will override timeouts defined in playwright.config.ts
 
 })
