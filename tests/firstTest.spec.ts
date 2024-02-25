@@ -1,11 +1,17 @@
-import {test, expect} from '@playwright/test'
+// Importing test and expect functions from the '@playwright/test' library
+import { test, expect } from '@playwright/test';
 
-
-test.beforeEach(async({page}) => {
-    await page.goto('http://localhost:4200/')
-    await page.getByText('Forms').click()
-    await page.getByText('Form Layouts').click()
-})
+// Defining a test setup function to run before each test
+test.beforeEach(async ({ page }) => {
+    // Navigating the browser page to a specific URL
+    await page.goto('http://localhost:4200/');
+    
+    // Clicking on an element with the text 'Forms' on the page
+    await page.getByText('Forms').click();
+    
+    // Clicking on an element with the text 'Form Layouts' on the page
+    await page.getByText('Form Layouts').click();
+});
 
 test('Locator syntax rules', async({page}) => {
 
