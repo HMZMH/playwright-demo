@@ -15,13 +15,13 @@ test.describe('Form Layouts page', () => {
     test('input fields', async({page}) => {
         const usingTheGridEmailInput = page.locator('nb-card', {hasText: "Using the Grid"}).getByRole('textbox', {name: "Email"})
 
-        await usingTheGridEmailInput.fill('test@test.com')
-        await usingTheGridEmailInput.clear()
-        await usingTheGridEmailInput.pressSequentially('test2@test.com')
+        await usingTheGridEmailInput.fill('test@test.com') // 'fill' is used to enter text into a field
+        await usingTheGridEmailInput.clear() // 'clear' is used to clear the input field
+        await usingTheGridEmailInput.pressSequentially('test2@test.com', {delay: 500}) // 'pressSequentially' is used to simulate key strokes
 
         // Generic assertion
-        const inputValue = await usingTheGridEmailInput.inputValue()
-        expect(inputValue).toEqual('test2@test.com')
+        // const inputValue = await usingTheGridEmailInput.inputValue()
+        // expect(inputValue).toEqual('test2@test.com')
 
         // Locator Assertion
         await expect(usingTheGridEmailInput).toHaveValue('test2@test.com')
