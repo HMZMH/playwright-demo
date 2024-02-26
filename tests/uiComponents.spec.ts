@@ -119,7 +119,7 @@ test.describe('Form Layouts page', () => {
         // 2 get the row based on the value in a specific column
         await page.locator('.ng2-smart-pagination-nav').getByText('2').click()
         const targetRowById = page.getByRole('row', {name: "11"}).filter({has: page.locator('td').nth(1).getByText('11')})
-        await targetRowById.locator('.nbedit').click()
+        await targetRowById.locator('.nb-edit').click()
         await page.locator('input editor').getByPlaceholder('E-mail').clear()
         await page.locator('input editor').getByPlaceholder('E-mail').fill('test@test.com')
         await page.locator('.nb-checkmark').click()
